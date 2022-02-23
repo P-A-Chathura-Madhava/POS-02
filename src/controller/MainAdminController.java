@@ -7,19 +7,38 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class MainAdminController {
 
     public JFXButton bt_ime;
+
     @FXML
+    public AnchorPane slider;
+
+    @FXML
+	public boolean slidePanel = false;
+
+    @FXML
+	public JFXButton btnMenu;
+
+    @FXML
+	public Label Menu;
+
+    @FXML
+	public Label MenuClose;
+
+	@FXML
 	private ResourceBundle resources;
 
 	@FXML
@@ -94,6 +113,43 @@ public class MainAdminController {
 
 		// bt_product.setStyle("-fx-background-color : #6e6e6e");
 		bt_product.setDisable(true);
+
+		TranslateTransition slide = new TranslateTransition();
+		slide.setDuration(Duration.seconds(0.4));
+		slide.setNode(slider);
+
+		slide.setToX(-298);
+		slide.play();
+
+		slider.setTranslateX(0);
+		slidePanel = false;
+
+	}
+
+	public void btnMenuOnAction(ActionEvent actionEvent) {
+		if(slidePanel == false){
+			slider.setTranslateX(-298);
+				TranslateTransition slide = new TranslateTransition();
+				slide.setDuration(Duration.seconds(0.4));
+				slide.setNode(slider);
+
+				slide.setToX(0);
+				slide.play();
+
+				slider.setTranslateX(-298);
+				slidePanel = true;
+		}else {
+
+				TranslateTransition slide = new TranslateTransition();
+				slide.setDuration(Duration.seconds(0.4));
+				slide.setNode(slider);
+
+				slide.setToX(-298);
+				slide.play();
+
+				slider.setTranslateX(0);
+				slidePanel = false;
+		}
 	}
 
 	// for screen transaction from login to admin panel
