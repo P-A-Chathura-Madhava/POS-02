@@ -32,12 +32,6 @@ public class MainAdminController {
     @FXML
 	public JFXButton btnMenu;
 
-    @FXML
-	public Label Menu;
-
-    @FXML
-	public Label MenuClose;
-
 	@FXML
 	private ResourceBundle resources;
 
