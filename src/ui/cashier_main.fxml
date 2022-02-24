@@ -13,12 +13,12 @@
     <children>
         <JFXTextField fx:id="tf_barcode_search" labelFloat="true" layoutX="29.0" layoutY="80.0" onKeyReleased="#tfTypeSearchAction" prefHeight="38.0" prefWidth="353.0" promptText="Search by barcode" unFocusColor="#252525">
             <font>
-                <Font size="16.0" />
+                <Font size="14.0" />
             </font>
         </JFXTextField>
         <JFXTextField fx:id="tf_name_search" labelFloat="true" layoutX="412.0" layoutY="77.0" onKeyReleased="#tfNameSearchAction" prefHeight="41.0" prefWidth="322.0" promptText="Search by name">
             <font>
-                <Font size="16.0" />
+                <Font size="14.0" />
             </font>
         </JFXTextField>
         <Label layoutX="1028.0" layoutY="87.0" prefHeight="49.0" prefWidth="115.0" text="Sale Items">
@@ -26,29 +26,24 @@
                 <Font name="System Bold" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="871.0" layoutY="94.0" prefHeight="35.0" prefWidth="134.0" text="Yuwa Mobile">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
         <Label layoutX="870.0" layoutY="136.0" text="Slip No:" />
         <Label fx:id="lb_slip_no" layoutX="919.0" layoutY="136.0" text="113" />
-        <JFXButton fx:id="bt_new" buttonType="RAISED" graphicTextGap="3.0" layoutX="1150.0" layoutY="111.0" onAction="#onbtNewClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #27ae60;" text="New Customer" textFill="WHITE">
+        <JFXButton fx:id="bt_new" buttonType="RAISED" graphicTextGap="3.0" layoutX="1150.0" layoutY="111.0" onAction="#onbtNewClick" prefHeight="25.0" prefWidth="154.0" styleClass="button1" stylesheets="@../css/Buttons.css" text="New Customer" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="bt_new1" buttonType="RAISED" graphicTextGap="3.0" layoutX="1150.0" layoutY="147.0" onAction="#onbtNewClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #c0392b;" text="Delete Item" textFill="WHITE">
+        <JFXButton fx:id="bt_new1" buttonType="RAISED" graphicTextGap="3.0" layoutX="1150.0" layoutY="147.0" onAction="#onbtNewClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #c0392b;" styleClass="btnDelete" stylesheets="@../css/Buttons.css" text="Delete Item" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="btPrint" layoutX="1227.0" layoutY="639.0" onAction="#onbtPrintClick" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: #2980b9;" text="Print" textFill="WHITE">
+        <JFXButton fx:id="btPrint" layoutX="1227.0" layoutY="639.0" onAction="#onbtPrintClick" prefHeight="40.0" prefWidth="76.0" styleClass="button2" stylesheets="@../css/Buttons.css" text="Print" textFill="WHITE">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="bt_pay" layoutX="1227.0" layoutY="591.0" onAction="#onBtPayClick" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: #2980b9;" text="Card Pay" textFill="WHITE">
+        <JFXButton fx:id="bt_pay" layoutX="1227.0" layoutY="591.0" onAction="#onBtPayClick" prefHeight="40.0" prefWidth="76.0" styleClass="button2" stylesheets="@../css/Buttons.css" text="Card Pay" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
@@ -56,7 +51,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="bt_redeem" buttonType="RAISED" layoutX="22.0" layoutY="616.0" onAction="#onbtRedeemClick" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #2980b9;" text="Topup Card" textFill="WHITE">
+        <JFXButton fx:id="bt_redeem" buttonType="RAISED" layoutX="22.0" layoutY="616.0" onAction="#onbtRedeemClick" prefHeight="30.0" prefWidth="142.0" styleClass="button2" stylesheets="@../css/Buttons.css" text="Topup Card" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
@@ -64,7 +59,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </JFXButton>
-        <JFXButton fx:id="bt_create_card" buttonType="RAISED" layoutX="22.0" layoutY="655.0" onAction="#onbtCreateCardClick" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #27ae60;" text="Create Card" textFill="WHITE">
+        <JFXButton fx:id="bt_create_card" buttonType="RAISED" layoutX="22.0" layoutY="655.0" onAction="#onbtCreateCardClick" prefHeight="30.0" prefWidth="142.0" styleClass="button1" stylesheets="@../css/Buttons.css" text="Create Card" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>
@@ -105,7 +100,6 @@
                 <Font size="14.0" />
             </font>
         </JFXTextField>
-        <Separator layoutX="867.0" layoutY="79.0" prefHeight="17.0" prefWidth="437.0" />
         <Separator layoutX="844.0" layoutY="115.0" orientation="VERTICAL" prefHeight="556.0" prefWidth="20.0" />
       <AnchorPane prefHeight="84.0" prefWidth="1323.0">
          <children>
@@ -122,13 +116,12 @@
                       <Cursor fx:constant="HAND" />
                   </cursor>
               </JFXButton>
-              <Separator layoutX="565.0" layoutY="15.0" prefHeight="17.0" prefWidth="594.0" />
-            <JFXButton fx:id="btnAccessories" buttonType="RAISED" layoutX="10.0" layoutY="52.0" onAction="#btnAccesoriesOnAction" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #2980b9;" text="Accessories">
+            <JFXButton fx:id="btnAccessories" buttonType="RAISED" layoutX="10.0" layoutY="52.0" onAction="#btnAccesoriesOnAction" prefHeight="25.0" prefWidth="184.0" stylesheets="@../css/Styles.css" text="Accessories">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnMobiles" buttonType="RAISED" layoutX="201.0" layoutY="52.0" onAction="#btnMobilesOnAction" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #2980b9;" text="Mobiles">
+            <JFXButton fx:id="btnMobiles" buttonType="RAISED" layoutX="201.0" layoutY="52.0" onAction="#btnMobilesOnAction" prefHeight="25.0" prefWidth="184.0" stylesheets="@../css/Styles.css" text="Mobiles">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

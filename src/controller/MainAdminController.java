@@ -30,6 +30,9 @@ public class MainAdminController {
 	public boolean slidePanel = false;
 
     @FXML
+	public boolean uiSize = false;
+
+    @FXML
 	public JFXButton btnMenu;
 
 	@FXML
@@ -132,8 +135,8 @@ public class MainAdminController {
 
 				slider.setTranslateX(-298);
 				slidePanel = true;
+				uiSize = true;
 		}else {
-
 				TranslateTransition slide = new TranslateTransition();
 				slide.setDuration(Duration.seconds(0.4));
 				slide.setNode(slider);
@@ -143,6 +146,7 @@ public class MainAdminController {
 
 				slider.setTranslateX(0);
 				slidePanel = false;
+				uiSize = false;
 		}
 	}
 
@@ -242,6 +246,8 @@ public class MainAdminController {
 		bt_supplier.setDisable(false);
 		bt_card.setDisable(false);
 		bt_ime.setDisable(false);
+
+		uiSize = false;
 	}
 	
 	@FXML

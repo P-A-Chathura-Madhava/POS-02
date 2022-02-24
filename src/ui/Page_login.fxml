@@ -16,13 +16,13 @@
          <children>
             <JFXTextField id="txt_id" fx:id="tf_id" focusColor="BLACK" labelFloat="true" layoutX="84.0" layoutY="215.0" prefHeight="40.0" prefWidth="463.0" promptText="Login ID" unFocusColor="BLACK" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></JFXTextField>
             <JFXPasswordField fx:id="tf_pass" focusColor="BLACK" labelFloat="true" layoutX="84.0" layoutY="310.0" prefHeight="40.0" prefWidth="463.0" promptText="Password" unFocusColor="BLACK" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></JFXPasswordField>
-            <JFXButton fx:id="bt_login" buttonType="RAISED" defaultButton="true" layoutX="88.0" layoutY="443.0" onAction="#bt_login_action" prefHeight="49.0" prefWidth="278.0" ripplerFill="#6578a6" stylesheets="@../css/loginButton.css" text="Login" textFill="WHITE" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
+            <JFXButton fx:id="bt_login" buttonType="RAISED" defaultButton="true" layoutX="88.0" layoutY="443.0" onAction="#bt_login_action" prefHeight="49.0" prefWidth="278.0" ripplerFill="#6578a6" stylesheets="@../css/Styles.css" text="Login" textFill="WHITE" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
