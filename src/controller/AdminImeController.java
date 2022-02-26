@@ -208,7 +208,7 @@ public class AdminImeController {
 	public void onbtNewAction(ActionEvent actionEvent) {
 	}
 
-	public void onBarcodeSearchActionn(KeyEvent keyEvent) {
+	public void onBarcodeSearchAction(KeyEvent keyEvent) {
 	}
 
 	public void onNameSearchAction(KeyEvent keyEvent) {

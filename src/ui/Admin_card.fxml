@@ -21,21 +21,33 @@
       </Label>
       <JFXTextField fx:id="tf_card_no" layoutX="106.0" layoutY="556.0" prefHeight="27.0" prefWidth="414.0" promptText="Card No" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="550.0" />
       <JFXTextField fx:id="tf_pin" layoutX="508.0" layoutY="556.0" prefHeight="27.0" prefWidth="414.0" promptText="PIN Number" AnchorPane.leftAnchor="444.0" AnchorPane.topAnchor="550.0" />
-      <JFXButton fx:id="bt_new" layoutX="37.0" layoutY="10.0" onAction="#onNewAction" prefHeight="40.0" prefWidth="440.0" styleClass="button1" stylesheets="@../css/Buttons.css" text="New" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="bt_add" layoutX="450.0" layoutY="16.0" onAction="#onAddAction" prefHeight="40.0" prefWidth="440.0" styleClass="button2" stylesheets="@../css/Buttons.css" text="Add" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="440.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </JFXButton>
+      <AnchorPane layoutX="14.0" layoutY="577.0" prefHeight="40.0" prefWidth="1320.0" style="-fx-background-color: #2262c6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXButton fx:id="bt_new" layoutX="27.0" onAction="#onNewAction" prefHeight="40.0" prefWidth="440.0" styleClass="button1" stylesheets="@../css/Buttons.css" text="New" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="bt_add" layoutX="440.0" layoutY="6.0" onAction="#onAddAction" prefHeight="40.0" prefWidth="440.0" styleClass="button2" stylesheets="@../css/Buttons.css" text="Add" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="440.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="bt_update" layoutX="794.0" prefHeight="40.0" prefWidth="440.0" styleClass="button3" stylesheets="@../css/Buttons.css" text="Update" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
