@@ -125,7 +125,7 @@ public class AdminImeController {
 		col_ime_number = new TableColumn<Ime, String>("Mobile Number");
 		col_item_categroy = new TableColumn<Ime, String>("Category");
 		col_item_supplier = new TableColumn<Ime, String>("Supplier");
-		col_item_dateadded = new TableColumn<Ime, String>("Date Added");
+		col_item_dateadded = new TableColumn<Ime, String>("Date Added"+"");
 		col_item_stock = new TableColumn<Ime, String>("Stock");
 		col_item_price = new TableColumn<Ime, String>("Price");
 
