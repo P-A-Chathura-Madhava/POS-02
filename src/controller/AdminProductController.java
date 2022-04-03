@@ -34,10 +34,7 @@ import model.ProductItem;
 public class AdminProductController {
 
 	@FXML
-    public JFXTextField tf_buying_price;
-
-	@FXML
-	public JFXTextField tf_selling_price;
+	public JFXTextField tf_buying_price;
 
 	@FXML
 	private ResourceBundle resources;
@@ -121,8 +118,7 @@ public class AdminProductController {
 		assert tb_product_item != null : "fx:id=\"tb_product_item\" was not injected: check your FXML file 'admin_product.fxml'.";
 		assert tf_barcode != null : "fx:id=\"tf_barcode\" was not injected: check your FXML file 'admin_product.fxml'.";
 		assert tf_name != null : "fx:id=\"tf_name\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_buying_price != null : "fx:id=\"tf_buying_price\" was not injected: check your FXML file 'admin_product.fxml'.";
-		assert tf_selling_price != null : "fx:id=\"tf_selling_price\" was not injected: check your FXML file 'admin_product.fxml'.";
+		assert tf_price != null : "fx:id=\"tf_price\" was not injected: check your FXML file 'admin_product.fxml'.";
 		assert tf_date_added != null : "fx:id=\"tf_date_added\" was not injected: check your FXML file 'admin_product.fxml'.";
 		assert tf_stock != null : "fx:id=\"tf_stock\" was not injected: check your FXML file 'admin_product.fxml'.";
 		assert tf_expired_date != null : "fx:id=\"tf_expired_date\" was not injected: check your FXML file 'admin_product.fxml'.";
@@ -143,23 +139,23 @@ public class AdminProductController {
 		col_item_stock = new TableColumn<ProductItem, String>("Stock");
 		col_item_expire_date = new TableColumn<ProductItem, String>("Expired Date");
 
-		col_item_barcode.setMinWidth(140.0);
-		col_item_name.setMinWidth(140.0);
-		col_item_categroy.setMinWidth(110.0);
-		col_item_price.setMinWidth(100.0);
-		col_item_supplier.setMinWidth(140.0);
-		col_item_dateadded.setMinWidth(100.0);
-		col_item_stock.setMinWidth(100.0);
-		col_item_expire_date.setMinWidth(100.0);
+		col_item_barcode.setMinWidth(190.0);
+		col_item_name.setMinWidth(200.0);
+		col_item_categroy.setMinWidth(160.0);
+		col_item_price.setMinWidth(90.0);
+		col_item_supplier.setMinWidth(170.0);
+		col_item_dateadded.setMinWidth(120.0);
+		col_item_stock.setMinWidth(90.0);
+		col_item_expire_date.setMinWidth(140.0);
 
-		col_item_barcode.setStyle("-fx-font-size: 14");
-		col_item_name.setStyle("-fx-font-size: 14");
-		col_item_categroy.setStyle("-fx-font-size: 14");
-		col_item_price.setStyle("-fx-font-size: 14");
-		col_item_supplier.setStyle("-fx-font-size: 14");
-		col_item_dateadded.setStyle("-fx-font-size: 14");
-		col_item_stock.setStyle("-fx-font-size: 14");
-		col_item_expire_date.setStyle("-fx-font-size: 14");
+		col_item_barcode.setStyle("-fx-font-size: 18");
+		col_item_name.setStyle("-fx-font-size: 18");
+		col_item_categroy.setStyle("-fx-font-size: 18");
+		col_item_price.setStyle("-fx-font-size: 18");
+		col_item_supplier.setStyle("-fx-font-size: 18");
+		col_item_dateadded.setStyle("-fx-font-size: 18");
+		col_item_stock.setStyle("-fx-font-size: 18");
+		col_item_expire_date.setStyle("-fx-font-size: 18");
 
 		col_item_barcode.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("barcode"));
 		col_item_name.setCellValueFactory(new PropertyValueFactory<ProductItem, String>("name"));
@@ -333,23 +329,6 @@ public class AdminProductController {
 			return row;
 
 		});
-
-		tb_product_item.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-			if(newValue != null){
-				setProductData(newValue);
-			}
-		});
-
-	}
-
-	private void setProductData(ProductItem newValue) {
-		tf_barcode.setText(newValue.getBarcode());
-		tf_name.setText(newValue.getName());
-		cbo_category.setValue(newValue.getCategoryname());
-		tf_selling_price.setText(newValue.getPrice());
-		cbo_supplier.setValue(newValue.getSuppliername());
-		tf_date_added.setText(newValue.getDateadded());
-		tf_stock.setText(newValue.getStockamount());
 	}
 
 	@FXML
@@ -358,9 +337,9 @@ public class AdminProductController {
 
 		if (tf_barcode.getText().toString().equals("") || tf_name.getText().toString().equals("")
 				|| tf_price.getText().toString().equals("") || tf_stock.getText().toString().equals("")
-				|| tf_expired_date.getText().toString().equals("") || tf_price.getText().matches(".*[a-zA-Z]+.*")
+				/*|| tf_expired_date.getText().toString().equals("")*/ || tf_price.getText().matches(".*[a-zA-Z]+.*")
 				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(".*[a-zA-Z]+.*")
-				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 || tf_expired_date.getText().length() < 9) {
+				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 /*|| tf_expired_date.getText().length() < 9*/) {
 
 			Alert al = new Alert(AlertType.ERROR, "Input Error or Data Missing!");
 			al.showAndWait();
@@ -369,7 +348,7 @@ public class AdminProductController {
 			String name = tf_name.getText().toString();
 			String categoryname = cbo_category.getValue().toString();
 			String dateadded = tf_date_added.getText().toString();
-			String expireddate = tf_expired_date.getText().toString();
+			String expireddate = /*tf_expired_date.getText().toString()*/"";
 			String price = tf_price.getText().toString();
 			String barcode = tf_barcode.getText().toString();
 			String suppliername = cbo_supplier.getValue().toString();
@@ -418,7 +397,7 @@ public class AdminProductController {
 			// clear
 			tf_name.clear();
 			tf_date_added.clear();
-			tf_expired_date.clear();
+			/*tf_expired_date.clear();*/
 			tf_price.clear();
 			tf_barcode.clear();
 			tf_stock.clear();
@@ -463,9 +442,9 @@ public class AdminProductController {
 
 		if (tf_barcode.getText().toString().equals("") || tf_name.getText().toString().equals("")
 				|| tf_price.getText().toString().equals("") || tf_stock.getText().toString().equals("")
-				|| tf_expired_date.getText().toString().equals("") || tf_price.getText().matches(".*[a-zA-Z]+.*")
+				/*|| tf_expired_date.getText().toString().equals("")*/ || tf_price.getText().matches(".*[a-zA-Z]+.*")
 				|| Double.parseDouble(tf_price.getText().toString()) <= 0 || tf_stock.getText().matches(".*[a-zA-Z]+.*")
-				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 || tf_expired_date.getText().length() < 9) {
+				|| Double.parseDouble(tf_stock.getText().toString()) <= 0 /*|| tf_expired_date.getText().length() < 9*/) {
 
 			Alert al = new Alert(AlertType.ERROR, "Input Error or Data Missing!");
 			al.showAndWait();
@@ -474,107 +453,107 @@ public class AdminProductController {
 			String name = tf_name.getText().toString();
 			String categoryname = cbo_category.getValue().toString();
 			String dateadded = tf_date_added.getText().toString();
-			String expireddate = tf_expired_date.getText().toString();
+			String expireddate = /*tf_expired_date.getText().toString()*/"";
 			String price = tf_price.getText().toString();
 			String barcode = tf_barcode.getText().toString();
 			String suppliername = cbo_supplier.getValue().toString();
 			String stockamount = tf_stock.getText().toString();
 
 			try {
-			// get category id by name
-			String categoryQuery = "SELECT `id` FROM `productcategory` WHERE productcategory.name = '" + categoryname
-					+ "'";
-			int categoryid = 0;
-			new DBInitialize().DBInitialize();
-			new DBInitialize();
-			ResultSet rs = DBInitialize.statement.executeQuery(categoryQuery);
-			if (rs.next()) {
-				categoryid = rs.getInt(1);
-			} else {
+				// get category id by name
+				String categoryQuery = "SELECT `id` FROM `productcategory` WHERE productcategory.name = '" + categoryname
+						+ "'";
+				int categoryid = 0;
+				new DBInitialize().DBInitialize();
+				new DBInitialize();
+				ResultSet rs = DBInitialize.statement.executeQuery(categoryQuery);
+				if (rs.next()) {
+					categoryid = rs.getInt(1);
+				} else {
+					// show alert
+					Alert alert = new Alert(AlertType.ERROR, "Try Again1");
+					alert.showAndWait();
+				}
+
+				// get category id by name
+				String supplierQuery = "SELECT `id` FROM `supplier` WHERE supplier.companyname = '" + suppliername + "'";
+				System.out.println("Supplier name is : " + suppliername);
+				int supplierid = 0;
+				new DBInitialize().DBInitialize();
+				new DBInitialize();
+				ResultSet r = DBInitialize.statement.executeQuery(supplierQuery);
+				if (r.next()) {
+					supplierid = r.getInt(1);
+					System.out.println("Supplier id is : " + supplierid);
+				} else {
+					// show alert
+					Alert alert = new Alert(AlertType.ERROR, "Try Again2");
+					alert.showAndWait();
+				}
+
+				String query = "INSERT INTO `productitems`(`name`, `categoryid`, `dateadded`, `expireddate`, `price`, `barcode`, `supplierid`, `stockamount`, `count`) VALUES"
+						+ " ('" + name + "'," + categoryid + ",'" + dateadded + "','" + expireddate + "','" + price + "','"
+						+ barcode + "'," + supplierid + ",'" + stockamount + "', 0);";
+
+				new DBInitialize().DBInitialize();
+				new DBInitialize();
+				DBInitialize.statement.executeUpdate(query);
+
+				// update supplier table lastsupplied date
+				String pat = "dd/MM/yyyy";
+				String todaydate = new SimpleDateFormat(pat).format(new Date());
+				System.out.println("today is " + todaydate);
+
+				String upquery = "UPDATE `supplier` SET `lastdatesupplied`='" + todaydate + "' WHERE `id`='" + supplierid
+						+ "'";
+
+				new DBInitialize().DBInitialize();
+				new DBInitialize();
+				DBInitialize.statement.executeUpdate(upquery);
+
+				// clear
+				tf_name.clear();
+				tf_date_added.clear();
+				/*tf_expired_date.clear();*/
+				tf_price.clear();
+				tf_barcode.clear();
+				tf_stock.clear();
+
+				// update table data
+				new DBInitialize().DBInitialize();
+				String queryupdatetable = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id  ORDER BY productitems.barcode DESC  ;";
+
+				new DBInitialize();
+				ResultSet rss = DBInitialize.statement.executeQuery(queryupdatetable);
+				productData.clear();
+
+				while (rss.next()) {
+					ProductItem product = new ProductItem();
+					product.setBarcode(rss.getString(1));
+					product.setName(rss.getString(2));
+					product.setCategoryname(rss.getString(3));
+					product.setPrice(rss.getString(4));
+					product.setSuppliername(rss.getString(5));
+					product.setDateadded(rss.getString(6));
+					product.setStockamount(rss.getString(7));
+					product.setExpiredate(rss.getString(8));
+
+					productData.add(product);
+
+				}
+				// tb_product_item.getItems().clear();
+				tb_product_item.refresh();
+				// tb_product_item.setItems(productData);
+
 				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again1");
+				Alert alert = new Alert(AlertType.INFORMATION, "Success! One product items is added to database.");
 				alert.showAndWait();
-			}
 
-			// get category id by name
-			String supplierQuery = "SELECT `id` FROM `supplier` WHERE supplier.companyname = '" + suppliername + "'";
-			System.out.println("Supplier name is : " + suppliername);
-			int supplierid = 0;
-			new DBInitialize().DBInitialize();
-			new DBInitialize();
-			ResultSet r = DBInitialize.statement.executeQuery(supplierQuery);
-			if (r.next()) {
-				supplierid = r.getInt(1);
-				System.out.println("Supplier id is : " + supplierid);
-			} else {
-				// show alert
-				Alert alert = new Alert(AlertType.ERROR, "Try Again2");
-				alert.showAndWait();
-			}
-
-			String query = "INSERT INTO `productitems`(`name`, `categoryid`, `dateadded`, `expireddate`, `price`, `barcode`, `supplierid`, `stockamount`, `count`) VALUES"
-					+ " ('" + name + "'," + categoryid + ",'" + dateadded + "','" + expireddate + "','" + price + "','"
-					+ barcode + "'," + supplierid + ",'" + stockamount + "', 0);";
-
-			new DBInitialize().DBInitialize();
-			new DBInitialize();
-			DBInitialize.statement.executeUpdate(query);
-
-			// update supplier table lastsupplied date
-			String pat = "dd/MM/yyyy";
-			String todaydate = new SimpleDateFormat(pat).format(new Date());
-			System.out.println("today is " + todaydate);
-
-			String upquery = "UPDATE `supplier` SET `lastdatesupplied`='" + todaydate + "' WHERE `id`='" + supplierid
-					+ "'";
-
-			new DBInitialize().DBInitialize();
-			new DBInitialize();
-			DBInitialize.statement.executeUpdate(upquery);
-
-			// clear
-			tf_name.clear();
-			tf_date_added.clear();
-			tf_expired_date.clear();
-			tf_price.clear();
-			tf_barcode.clear();
-			tf_stock.clear();
-
-			// update table data
-			new DBInitialize().DBInitialize();
-			String queryupdatetable = "SELECT productitems.barcode, productitems.name, productcategory.name, productitems.price, supplier.companyname, productitems.dateadded, productitems.stockamount, productitems.expireddate FROM productitems, supplier,productcategory WHERE productitems.categoryid = productcategory.id AND productitems.supplierid = supplier.id  ORDER BY productitems.barcode DESC  ;";
-
-			new DBInitialize();
-			ResultSet rss = DBInitialize.statement.executeQuery(queryupdatetable);
-			productData.clear();
-
-			while (rss.next()) {
-				ProductItem product = new ProductItem();
-				product.setBarcode(rss.getString(1));
-				product.setName(rss.getString(2));
-				product.setCategoryname(rss.getString(3));
-				product.setPrice(rss.getString(4));
-				product.setSuppliername(rss.getString(5));
-				product.setDateadded(rss.getString(6));
-				product.setStockamount(rss.getString(7));
-				product.setExpiredate(rss.getString(8));
-
-				productData.add(product);
-
-			}
-			// tb_product_item.getItems().clear();
-			tb_product_item.refresh();
-			// tb_product_item.setItems(productData);
-
-			// show alert
-			Alert alert = new Alert(AlertType.INFORMATION, "Success! One product items is added to database.");
-			alert.showAndWait();
-			
 			}//end of try
-	    	catch(Exception ex) {
-	    		Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
-	    		al.showAndWait();
-	    	}
+			catch(Exception ex) {
+				Alert al = new Alert(AlertType.ERROR, ""+ex.getMessage());
+				al.showAndWait();
+			}
 		} // end of else
 
 	}
@@ -585,7 +564,6 @@ public class AdminProductController {
 		// clear
 		tf_name.clear();
 		tf_date_added.clear();
-		tf_expired_date.clear();
 		tf_price.clear();
 		tf_barcode.clear();
 		tf_stock.clear();
@@ -616,7 +594,7 @@ public class AdminProductController {
 	// barcode search
 
 	@FXML
-    void onBarcodeSearchActionn(KeyEvent event) {
+	void onBarcodeSearchActionn(KeyEvent event) {
 
 
 		String searchKey = tf_barcode_search.getText().toString();

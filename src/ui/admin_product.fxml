@@ -35,7 +35,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <JFXTextField fx:id="tf_selling_price" layoutX="583.0" layoutY="498.0" prefHeight="27.0" prefWidth="414.0" promptText="Selling Price" AnchorPane.leftAnchor="444.0" AnchorPane.topAnchor="506.0" />
+      <JFXTextField fx:id="tf_price" layoutX="583.0" layoutY="498.0" prefHeight="27.0" prefWidth="414.0" promptText="Selling Price" AnchorPane.leftAnchor="444.0" AnchorPane.topAnchor="506.0" />
       <AnchorPane layoutX="1.0" layoutY="599.0" prefHeight="40.0" prefWidth="1320.0" style="-fx-background-color: #2262c6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <JFXButton fx:id="bt_new" layoutX="27.0" onAction="#onbtNewAction" prefHeight="40.0" prefWidth="440.0" styleClass="button1" stylesheets="@../css/Buttons.css" text="New" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
